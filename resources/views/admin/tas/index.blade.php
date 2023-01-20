@@ -21,6 +21,7 @@
                                     <th>Warna</th>
                                     <th>Deskripsi</th>
                                     <th>Harga</th>
+                                    <th>Link</th>
                                     <th>Aksi</th>
                                 </thead>
                                 <tbody>
@@ -35,6 +36,7 @@
                                             <td>{{ $tas->warna }}</td>
                                             <td>{{ $tas->deskripsi}}</td>
                                             <td>{{ $tas->harga}}</td>
+                                            <td>{{ $tas->link}}</td>
                                             <td>
                                                 <form action="{{ route('tas.destroy', $tas->id) }}" method="post">
                                                     @csrf

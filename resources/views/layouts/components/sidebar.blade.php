@@ -12,7 +12,7 @@
 
 
                         <li class="sidebar-item active ">
-                            <a href="/dashboard" class='sidebar-link'>
+                            <a href="{{ Route('index') }}" class='sidebar-link'>
                                 <i data-feather="home" width="20"></i>
                                 <span>Dashboard</span>
                             </a>
@@ -28,11 +28,11 @@
                             <ul class="submenu ">
 
                                 <li>
-                                    <a href="/merek">Merek</a>
+                                    <a href="{{ Route('merek.index') }}">Merek</a>
                                 </li>
 
                                 <li>
-                                    <a href="/tas">Tas</a>
+                                    <a href="{{ Route('tas.index') }}">Tas</a>
                                 </li>
 
                                
@@ -303,9 +303,6 @@
                             </ul>
 
                         </li>
-
-
-
 
                         <li class="sidebar-item  has-sub">
                             <a href="#" class='sidebar-link'>

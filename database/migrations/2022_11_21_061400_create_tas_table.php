@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('warna');
             $table->text('deskripsi');
             $table->integer('harga');
+            $table->string('link');
             $table->timestamps();
 
             $table->foreign('id_merek')->references('id')->on('mereks')->onDelete('cascade');

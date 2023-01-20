@@ -65,6 +65,17 @@
                     @enderror
                     </div>
 
+                    <div class="form-group">
+                    <label for="">link</label>
+                    <input type="text" name="link"
+                    class="form-control @error('link') is-invalid @enderror" id="">
+                    @error('link')
+                    <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+                    </div>
+
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="submit" class="btn btn-primary">Save</button>

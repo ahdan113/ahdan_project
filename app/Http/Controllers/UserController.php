@@ -3,12 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
-use App\Models\Tas;
 use App\Models\Merek;
-use App\Models\Pemesan;
+use App\Models\Tas;
 
-class DashboardController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,25 +16,16 @@ class DashboardController extends Controller
     public function index()
     {
         
-        $jumlahMerek = Merek::all()->count();
-        $jumlahTas = Tas::all()->count();
-        $jumlahPemesan = Pemesan::all()->count();
-        $jumlahUser = User::all()->count();
+        $merek = Merek::all();
+        $tas = Tas::all();
+       
 
-        return view('admin.dashboard', compact(
-            'jumlahMerek',
-            'jumlahTas',
-            'jumlahPemesan',
-            'jumlahUser'
-        ),[
-            'users' => User::latest()->get(),
-            'Tas' => Tas::latest()->get(),
-            'mereks' => Merek::latest()->get(),
-            'pemesans' => Pemesan::latest()->get()
-        ]);
+        return view('layouts.user', compact(
+            'merek',
+            'tas',
+        ));
 
     }
-    
 
     /**
      * Show the form for creating a new resource.

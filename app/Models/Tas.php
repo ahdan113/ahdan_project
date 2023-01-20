@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Tas extends Model
 {
     use HasFactory;
-    public $fillable = ['foto','id_merek','warna','deskripsi','harga'];
+    public $fillable = ['foto','id_merek','warna','deskripsi','harga','link'];
     public $timestamps = true;
 
     

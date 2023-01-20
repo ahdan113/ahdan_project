@@ -48,6 +48,7 @@ class TasController extends Controller
             'warna' => 'required',
             'deskripsi' => 'required',
             'harga' => 'required',
+            'link' => 'required',
         ];
 
         $messages = [
@@ -57,6 +58,7 @@ class TasController extends Controller
             'warna.required' => 'Deskripsi harus di isi!',
             'deskripsi.required' => 'Deskripsi harus di isi!',
             'harga.required' => 'Harga harus di isi!',
+            'link.required' => 'Harga harus di isi!',
         ];
 
         $validation = Validator::make($request->all(), $rules, $messages);
@@ -75,6 +77,7 @@ class TasController extends Controller
         $tas->warna = $request->warna;
         $tas->deskripsi = $request->deskripsi;
         $tas->harga = $request->harga;
+        $tas->link = $request->link;
         
         $tas->save();
         Alert::success('Done', 'Data berhasil dibuat')->autoClose(2000);
@@ -126,6 +129,7 @@ class TasController extends Controller
         $tas->warna = $request->warna;
         $tas->deskripsi = $request->deskripsi;
         $tas->harga = $request->harga;
+        $tas->link = $request->link;
         $tas->save();
         Alert::success('Done', 'Data berhasil diedit');
         return redirect('/tas');
@@ -139,6 +143,9 @@ class TasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $tas = Tas::findOrFail($id);
+        $tas->delete();
+        Alert::success('Done', 'Data berhasil dihapus');
+        return redirect('/tas');
     }
 }

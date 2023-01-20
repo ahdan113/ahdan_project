@@ -19,7 +19,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
-        'id_role',
+        // 'id_role',
         'email',
         'password',
     ];
@@ -48,7 +48,7 @@ public function role()
 {
     //has many berlaku untuk banyak jadi 
     //satu tas bisa banyak merek
-    return $this->belongsTo(Role::class, 'id_role');
+    // return $this->belongsTo(Role::class, 'id_role');
 }
     
 public function pemesan()
